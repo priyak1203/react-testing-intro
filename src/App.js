@@ -17,6 +17,13 @@ function App() {
         >
           Learn React
         </a>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+        </ul>
+        <h2 data-testid="mytestid">Hello</h2>
+        <p title="sum">{5 + 4}</p>
       </header>
     </div>
   );
