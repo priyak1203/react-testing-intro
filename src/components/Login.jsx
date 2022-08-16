@@ -6,7 +6,7 @@ const Login = () => {
       <form>
         <input type="text" placeholder="Username" />
         <input type="password" placeholder="Password" />
-        <button>login</button>
+        <button disabled={true}>login</button>
       </form>
     </div>
   );

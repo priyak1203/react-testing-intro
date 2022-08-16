@@ -30,3 +30,9 @@ test('password input should be empty', () => {
   const passwordEl = screen.getByPlaceholderText(/password/i);
   expect(passwordEl.value).toBe('');
 });
+
+test('button should be disabled', () => {
+  render(<Login />);
+  const buttonEl = screen.getByRole('button');
+  expect(buttonEl).toBeDisabled();
+});
