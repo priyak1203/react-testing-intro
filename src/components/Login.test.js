@@ -36,3 +36,9 @@ test('button should be disabled', () => {
   const buttonEl = screen.getByRole('button');
   expect(buttonEl).toBeDisabled();
 });
+
+test('error message should not be visible', () => {
+  render(<Login />);
+  const errorEl = screen.getByTestId('error');
+  expect(errorEl).not.toBeVisible();
+});

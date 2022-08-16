@@ -12,8 +12,15 @@ code {
     monospace;
 }
 
+.App {
+  text-align: center;
+}
+
+.App h1 {
+  color: teal;
+}
 .container {
-  height: 100vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,4 +53,8 @@ button {
 button:disabled {
   background-color: rgba(2, 100, 100, 0.474);
   cursor: not-allowed;
+}
+
+span {
+  color: red;
 }
