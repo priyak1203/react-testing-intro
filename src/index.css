@@ -27,6 +27,11 @@ code {
   justify-content: center;
 }
 
+.user {
+  color: black;
+  font-weight: bold;
+}
+
 form {
   display: flex;
   flex-direction: column;

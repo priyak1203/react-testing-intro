@@ -19,6 +19,12 @@ test('button should be rendered', () => {
   expect(buttonEl).toBeInTheDocument();
 });
 
+test('loading should not be rendered', () => {
+  render(<Login />);
+  const buttonEl = screen.getByRole('button');
+  expect(buttonEl).not.toHaveTextContent(/please wait/i);
+});
+
 test('username input should be empty', () => {
   render(<Login />);
   const usernameEl = screen.getByPlaceholderText(/username/i);
@@ -74,4 +80,18 @@ test('button should not be disabled when inputs exist', () => {
   fireEvent.change(passwordEl, { target: { value: testValue } });
 
   expect(buttonEl).not.toBeDisabled();
+});
+
+test('loading should be rendered when clicked', () => {
+  render(<Login />);
+  const buttonEl = screen.getByRole('button');
+  const usernameEl = screen.getByPlaceholderText(/username/i);
+  const passwordEl = screen.getByPlaceholderText(/password/i);
+  const testValue = 'test';
+
+  fireEvent.change(usernameEl, { target: { value: testValue } });
+  fireEvent.change(passwordEl, { target: { value: testValue } });
+  fireEvent.click(buttonEl);
+
+  expect(buttonEl).toHaveTextContent(/please wait/i);
 });
