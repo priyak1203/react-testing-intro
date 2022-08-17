@@ -20,7 +20,7 @@ const Login = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button disabled={true}>login</button>
+        <button disabled={!username || !password}>login</button>
         <span
           data-testid="error"
           style={{ visibility: error ? 'visible' : 'hidden' }}

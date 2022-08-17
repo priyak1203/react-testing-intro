@@ -60,3 +60,18 @@ test('password input should change', () => {
   fireEvent.change(passwordEl, { target: { value: testValue } });
   expect(passwordEl.value).toBe(testValue);
 });
+
+test('button should not be disabled when inputs exist', () => {
+  render(<Login />);
+
+  const buttonEl = screen.getByRole('button');
+  const usernameEl = screen.getByPlaceholderText(/username/i);
+  const passwordEl = screen.getByPlaceholderText(/password/i);
+
+  const testValue = 'test';
+
+  fireEvent.change(usernameEl, { target: { value: testValue } });
+  fireEvent.change(passwordEl, { target: { value: testValue } });
+
+  expect(buttonEl).not.toBeDisabled();
+});
